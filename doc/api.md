@@ -28,14 +28,14 @@ If error occurs, the worker returns status code different from `200`:
 Usage example:
 
 ```shell
-$ curl https://shz.al/i-p-
+$ curl https://bin.boixu.com/i-p-
 https://web.archive.org/web/20210328091143/https://mp.weixin.qq.com/s/5phCQP7i-JpSvzPEMGk56Q
 
-$ curl https://shz.al/~panty.jpg | feh -
+$ curl https://bin.boixu.com/~panty.jpg | feh -
 
-$ firefox 'https://shz.al/kf7z?lang=nix'
+$ firefox 'https://bin.boixu.com/kf7z?lang=nix'
 
-$ curl 'https://shz.al/~panty.jpg?mime=image/png' -w '%{content_type}' -o /dev/null -sS
+$ curl 'https://bin.boixu.com/~panty.jpg?mime=image/png' -w '%{content_type}' -o /dev/null -sS
 image/png;charset=UTF-8
 ```
 
@@ -60,9 +60,9 @@ If error occurs, the worker returns status code different from `302`:
 Usage example:
 
 ```shell
-$ firefox https://shz.al/u/i-p-
+$ firefox https://bin.boixu.com/u/i-p-
 
-$ curl -L https://shz.al/u/i-p-
+$ curl -L https://bin.boixu.com/u/i-p-
 ```
 
 ## GET `/a/<name>`
@@ -99,7 +99,7 @@ bar | baz
  - A2
 - B
 
-![Panty](https://shz.al/~panty.jpg)
+![Panty](https://bin.boixu.com/~panty.jpg)
 
 1. first
 2. second
@@ -113,9 +113,9 @@ $$
 ```
 
 ```shell
-$ curl -Fc=@test.md -Fn=test-md https://shz.al
+$ curl -Fc=@test.md -Fn=test-md https://bin.boixu.com
 
-$ firefox https://shz.al/a/~test-md
+$ firefox https://bin.boixu.com/a/~test-md
 ```
 
 ## **POST** `/`
@@ -136,8 +136,8 @@ Upload your paste. It accept parameters in form-data:
 
 ```json
 {
-    "url": "https://shz.al/abcd",
-    "admin": "https://shz.al/abcd:w2eHqyZGc@CQzWLN=BiJiQxZ",
+    "url": "https://bin.boixu.com/abcd",
+    "admin": "https://bin.boixu.com/abcd:w2eHqyZGc@CQzWLN=BiJiQxZ",
     "expire": 100,
     "isPrivate": false
 }
@@ -145,7 +145,7 @@ Upload your paste. It accept parameters in form-data:
 
 Explanation of the fields:
 
-- `url`: String. The URL to fetch the paste. When using a customized name, it looks like `https//shz.al/~myname`.
+- `url`: String. The URL to fetch the paste. When using a customized name, it looks like `https//bin.boixu.com/~myname`.
 - `suggestUrl`: String or null. The URL that may carry filename or URL redirection.
 - `admin`: String. The URL to update and delete the paste, which is `url` suffixed by `~` and the password.
 - `expire`: String or null. The expiration seconds.
@@ -161,27 +161,27 @@ If error occurs, the worker returns status code different from `200`:
 Usage example:
 
 ```shell
-$ curl -Fc="kawaii" -Fe=300 -Fn=hitagi https://shz.al  # uploading some text
+$ curl -Fc="kawaii" -Fe=300 -Fn=hitagi https://bin.boixu.com  # uploading some text
 {
-  "url": "https://shz.al/~hitagi",
-  "admin": "https://shz.al/~hitagi:22@-OJWcTOH2jprTJWYadmDv",
+  "url": "https://bin.boixu.com/~hitagi",
+  "admin": "https://bin.boixu.com/~hitagi:22@-OJWcTOH2jprTJWYadmDv",
   "isPrivate": false,
   "expire": 300
 }
 
-$ curl -Fc=@panty.jpg -Fn=panty -Fs=12345678 https://shz.al   # uploading a file
+$ curl -Fc=@panty.jpg -Fn=panty -Fs=12345678 https://bin.boixu.com   # uploading a file
 {
-  "url": "https://shz.al/~panty",
-  "admin": "https://shz.al/~panty:12345678",
+  "url": "https://bin.boixu.com/~panty",
+  "admin": "https://bin.boixu.com/~panty:12345678",
   "isPrivate": false
 }
 
 # because `curl` takes some characters as filed separator, the fields should be
 # quoted by double-quotes if the field contains semicolon or comma
-$ curl -Fc=@panty.jpg -Fn='"hi/hello;g,ood"' -Fs=12345678 https://shz.al
+$ curl -Fc=@panty.jpg -Fn='"hi/hello;g,ood"' -Fs=12345678 https://bin.boixu.com
 {
-  "url": "https://shz.al/~hi/hello;g,ood",
-  "admin": "https://shz.al/~hi/hello;g,ood:QJhMKh5WR6z36QRAAn5Q5GZh",
+  "url": "https://bin.boixu.com/~hi/hello;g,ood",
+  "admin": "https://bin.boixu.com/~hi/hello;g,ood:QJhMKh5WR6z36QRAAn5Q5GZh",
   "isPrivate": false
 }
 ```
@@ -207,18 +207,18 @@ If error occurs, the worker returns status code different from `200`:
 Usage example:
 
 ```shell
-$ curl -X PUT -Fc="kawaii~" -Fe=500 https://shz.al/~hitagi:22@-OJWcTOH2jprTJWYadmDv
+$ curl -X PUT -Fc="kawaii~" -Fe=500 https://bin.boixu.com/~hitagi:22@-OJWcTOH2jprTJWYadmDv
 {
-  "url": "https://shz.al/~hitagi",
-  "admin": "https://shz.al/~hitagi:22@-OJWcTOH2jprTJWYadmDv",
+  "url": "https://bin.boixu.com/~hitagi",
+  "admin": "https://bin.boixu.com/~hitagi:22@-OJWcTOH2jprTJWYadmDv",
   "isPrivate": false,
   "expire": 500
 }
 
-$ curl -X PUT -Fc="kawaii~" https://shz.al/~hitagi:22@-OJWcTOH2jprTJWYadmDv
+$ curl -X PUT -Fc="kawaii~" https://bin.boixu.com/~hitagi:22@-OJWcTOH2jprTJWYadmDv
 {
-  "url": "https://shz.al/~hitagi",
-  "admin": "https://shz.al/~hitagi:22@-OJWcTOH2jprTJWYadmDv",
+  "url": "https://bin.boixu.com/~hitagi",
+  "admin": "https://bin.boixu.com/~hitagi:22@-OJWcTOH2jprTJWYadmDv",
   "isPrivate": false
 }
 ```
@@ -236,9 +236,9 @@ If error occurs, the worker returns status code different from `200`:
 Usage example:
 
 ```shell
-$ curl -X DELETE https://shz.al/~hitagi:22@-OJWcTOH2jprTJWYadmDv
+$ curl -X DELETE https://bin.boixu.com/~hitagi:22@-OJWcTOH2jprTJWYadmDv
 the paste will be deleted in seconds
 
-$ curl https://shz.al/~hitagi
+$ curl https://bin.boixu.com/~hitagi
 not found
 ```
